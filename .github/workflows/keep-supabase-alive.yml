@@ -25,15 +25,22 @@ jobs:
             exit 1
           fi
 
-          # Defaults are portable: query a tiny row from a known table.
+          # Default ping does NOT require any tables: GoTrue health endpoint.
           # You can override via repository Variables or Secrets.
-          # - SUPABASE_PING_TABLE (default: profiles)
-          # - SUPABASE_PING_SELECT (default: id)
-          # - SUPABASE_PING_PATH (optional: full path override, ex "/rest/v1/xyz?select=*&limit=1")
-          table="${SUPABASE_PING_TABLE:-profiles}"
-          select_cols="${SUPABASE_PING_SELECT:-id}"
-          ping_path_default="/rest/v1/${table}?select=${select_cols}&limit=1"
-          ping_path="${SUPABASE_PING_PATH:-$ping_path_default}"
+          # - SUPABASE_PING_PATH (optional, Secret): full path override, ex "/auth/v1/health" or "/rest/v1/xyz?select=*&limit=1"
+          # - SUPABASE_PING_TABLE (optional, Variable): if set, use PostgREST table ping
+          # - SUPABASE_PING_SELECT (optional, Variable): columns for PostgREST ping (default: id)
+          ping_path_default="/auth/v1/health"
+
+          if [ -n "${SUPABASE_PING_PATH:-}" ]; then
+            ping_path="${SUPABASE_PING_PATH}"
+          elif [ -n "${SUPABASE_PING_TABLE:-}" ]; then
+            table="${SUPABASE_PING_TABLE}"
+            select_cols="${SUPABASE_PING_SELECT:-id}"
+            ping_path="/rest/v1/${table}?select=${select_cols}&limit=1"
+          else
+            ping_path="${ping_path_default}"
+          fi
           ping_path="${ping_path#/}" # prevent double slashes
           url="${SUPABASE_URL%/}/${ping_path}"
 
