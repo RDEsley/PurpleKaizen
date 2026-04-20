@@ -7,6 +7,8 @@ Sistema completo de gestao de clientes, construido com foco em:
 - clean code e organizacao por features.
 
 ## Preview do produto
+
+Acesse pelo link: https://purple-kaizen.vercel.app/
 <img width="1918" height="936" alt="image" src="https://github.com/user-attachments/assets/480937b9-ee56-4307-980a-f385d6949c25" />
 <br>
 
