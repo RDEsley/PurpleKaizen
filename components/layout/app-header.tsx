@@ -1,7 +1,7 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
-import { LogOut, Search } from "lucide-react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { LogOut, RefreshCw, Search } from "lucide-react";
 
 import { signOutAction } from "@/features/auth/actions";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ type AppHeaderProps = {
 
 export const AppHeader = ({ userEmail }: AppHeaderProps) => {
   const pathname = usePathname();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const currentQuery = searchParams.get("q") ?? "";
 
@@ -28,6 +29,10 @@ export const AppHeader = ({ userEmail }: AppHeaderProps) => {
           <Search className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
           <Input className="pl-9 pr-9" defaultValue={currentQuery} name="q" placeholder="Buscar nesta tela..." />
         </form>
+        <Button onClick={() => router.refresh()} type="button" variant="secondary">
+          <RefreshCw className="mr-2 h-4 w-4" />
+          Recarregar
+        </Button>
         <form action={signOutAction}>
           <Button type="submit" variant="secondary">
             <LogOut className="mr-2 h-4 w-4" />

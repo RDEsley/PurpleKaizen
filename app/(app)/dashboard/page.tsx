@@ -15,8 +15,8 @@ const DashboardPage = async () => {
         </CardHeader>
         <CardContent className="text-sm text-slate-600">
           <p>
-            Este painel foi desenhado para apresentar maturidade de produto em entrevistas: dados centralizados,
-            rotas protegidas, arquitetura por features, seguranca com RLS e rastreabilidade de alteracoes.
+            Dados centralizados, rotas protegidas, arquitetura por features, seguranca com RLS e rastreabilidade de
+            alteracoes para uma operacao comercial mais eficiente.
           </p>
         </CardContent>
       </Card>

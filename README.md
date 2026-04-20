@@ -1,6 +1,6 @@
 # PurpleKaizen CRM
 
-Sistema completo de gestao de clientes para portfolio tecnico, construido com foco em:
+Sistema completo de gestao de clientes, construido com foco em:
 - arquitetura escalavel;
 - UX profissional;
 - seguranca com Supabase RLS;
@@ -122,7 +122,7 @@ Abra [http://localhost:3000](http://localhost:3000).
 - `npm run lint` - analise lint
 - `npm run typecheck` - validacao de tipos
 
-## Como apresentar em entrevista
+## Como apresentar o produto
 
 Sugestao de pitch tecnico (2-4 minutos):
 
@@ -151,4 +151,4 @@ Sugestao de pitch tecnico (2-4 minutos):
 
 ---
 
-Projeto desenvolvido para portfolio profissional, com foco em demonstrar maturidade fullstack e boas praticas de produto.
+Projeto desenvolvido com foco em maturidade fullstack, qualidade de produto e boas praticas de engenharia.

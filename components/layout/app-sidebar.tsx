@@ -13,7 +13,7 @@ export const AppSidebar = () => {
     <aside className="hidden w-72 border-r border-slate-200 bg-white p-4 lg:block">
       <div className="mb-8 rounded-2xl bg-brand px-4 py-5 text-brand-foreground">
         <p className="text-xs uppercase tracking-[0.2em]">PurpleKaizen</p>
-        <h1 className="mt-1 text-xl font-semibold">CRM Portfolio</h1>
+        <h1 className="mt-1 text-xl font-semibold">CRM Manager</h1>
         <p className="mt-2 text-sm text-purple-100">Gestao moderna de clientes com Supabase.</p>
       </div>
 

@@ -1,4 +1,4 @@
--- PurpleKaizen CRM - Interview demo seed
+-- PurpleKaizen CRM - Demo seed
 -- Safe to re-run: this script removes only IDs used by this seed.
 -- Prerequisite: at least one user created in Supabase Auth.
 
@@ -222,16 +222,16 @@ begin
   -- Audit events
   insert into public.audits (id, owner_id, entity, entity_id, action, payload)
   values
-    (900001, v_owner, 'clients', 'e5f95e37-3f00-4f06-8f07-e5e500000001', 'create', '{"seed":"interview-demo","source":"sql-seed","module":"clients"}'),
-    (900002, v_owner, 'clients', 'e5f95e37-3f00-4f06-8f07-e5e500000002', 'create', '{"seed":"interview-demo","source":"sql-seed","module":"clients"}'),
-    (900003, v_owner, 'contacts', 'd4e95e37-3f00-4f06-8f07-d4d400000001', 'create', '{"seed":"interview-demo","source":"sql-seed","module":"contacts"}'),
-    (900004, v_owner, 'tasks', 'c3d95e37-3f00-4f06-8f07-c3c300000002', 'create', '{"seed":"interview-demo","source":"sql-seed","module":"tasks"}'),
-    (900005, v_owner, 'proposals', 'b2c95e37-3f00-4f06-8f07-b2b200000001', 'create', '{"seed":"interview-demo","source":"sql-seed","module":"proposals"}'),
-    (900006, v_owner, 'financial_entries', 'a1f95e37-3f00-4f06-8f07-a1a100000001', 'create', '{"seed":"interview-demo","source":"sql-seed","module":"financial"}'),
-    (900007, v_owner, 'tasks', 'c3d95e37-3f00-4f06-8f07-c3c300000007', 'update', '{"seed":"interview-demo","source":"sql-seed","module":"tasks","status":"done"}'),
-    (900008, v_owner, 'proposals', 'b2c95e37-3f00-4f06-8f07-b2b200000003', 'update', '{"seed":"interview-demo","source":"sql-seed","module":"proposals","status":"approved"}'),
-    (900009, v_owner, 'clients', 'e5f95e37-3f00-4f06-8f07-e5e500000004', 'update', '{"seed":"interview-demo","source":"sql-seed","module":"clients","status":"inactive"}'),
-    (900010, v_owner, 'financial_entries', 'a1f95e37-3f00-4f06-8f07-a1a100000004', 'create', '{"seed":"interview-demo","source":"sql-seed","module":"financial","entry_type":"expense"}');
+    (900001, v_owner, 'clients', 'e5f95e37-3f00-4f06-8f07-e5e500000001', 'create', '{"seed":"crm-demo","source":"sql-seed","module":"clients"}'),
+    (900002, v_owner, 'clients', 'e5f95e37-3f00-4f06-8f07-e5e500000002', 'create', '{"seed":"crm-demo","source":"sql-seed","module":"clients"}'),
+    (900003, v_owner, 'contacts', 'd4e95e37-3f00-4f06-8f07-d4d400000001', 'create', '{"seed":"crm-demo","source":"sql-seed","module":"contacts"}'),
+    (900004, v_owner, 'tasks', 'c3d95e37-3f00-4f06-8f07-c3c300000002', 'create', '{"seed":"crm-demo","source":"sql-seed","module":"tasks"}'),
+    (900005, v_owner, 'proposals', 'b2c95e37-3f00-4f06-8f07-b2b200000001', 'create', '{"seed":"crm-demo","source":"sql-seed","module":"proposals"}'),
+    (900006, v_owner, 'financial_entries', 'a1f95e37-3f00-4f06-8f07-a1a100000001', 'create', '{"seed":"crm-demo","source":"sql-seed","module":"financial"}'),
+    (900007, v_owner, 'tasks', 'c3d95e37-3f00-4f06-8f07-c3c300000007', 'update', '{"seed":"crm-demo","source":"sql-seed","module":"tasks","status":"done"}'),
+    (900008, v_owner, 'proposals', 'b2c95e37-3f00-4f06-8f07-b2b200000003', 'update', '{"seed":"crm-demo","source":"sql-seed","module":"proposals","status":"approved"}'),
+    (900009, v_owner, 'clients', 'e5f95e37-3f00-4f06-8f07-e5e500000004', 'update', '{"seed":"crm-demo","source":"sql-seed","module":"clients","status":"inactive"}'),
+    (900010, v_owner, 'financial_entries', 'a1f95e37-3f00-4f06-8f07-a1a100000004', 'create', '{"seed":"crm-demo","source":"sql-seed","module":"financial","entry_type":"expense"}');
 
 end
 $seed$;
