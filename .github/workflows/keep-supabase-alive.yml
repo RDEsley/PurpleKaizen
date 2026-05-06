@@ -2,9 +2,8 @@ name: Keep Supabase Alive
 
 on:
   schedule:
-    # Supabase pausa projetos (free) após ~7 dias sem tráfego.
-    # Rodar a cada 6 dias é suficiente; ajuste se preferir mais frequência.
-    - cron: "0 0 */6 * *" # a cada 6 dias
+    # Rodar a cada 1 dias é suficiente; ajuste se preferir mais frequência.
+    - cron: "0 0 */1 * *" # a cada 1 dias
   workflow_dispatch:
 
 jobs:
