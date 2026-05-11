@@ -41,3 +41,21 @@ supabase/.branches/
 Thumbs.db
 *.swp
 *.swo
+
+# Hosting / deployment
+/.vercel/
+
+# caches
+.cache/
+.parcel-cache/
+.next/cache/
+
+# test coverage
+/coverage/
+
+# package managers / tooling
+.pnp.*
+.turbo/
+
+# local editor history
+.localhistory/
