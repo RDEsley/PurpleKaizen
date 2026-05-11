@@ -17,6 +17,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "framer-motion": "latest",
     "tailwind-merge": "latest",
     "zod": "latest"
   },

@@ -26,6 +26,25 @@ const config: Config = {
       boxShadow: {
         subtle: "0px 8px 24px rgba(17, 24, 39, 0.06)"
       }
+      keyframes: {
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" }
+        },
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(6px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "scale-in": {
+          "0%": { transform: "scale(.98)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" }
+        }
+      },
+      animation: {
+        "spin-slow": "spin-slow 1s linear infinite",
+        "fade-up": "fade-up 200ms ease-out",
+        "scale-in": "scale-in 160ms ease-out"
+      }
     }
   },
   plugins: []

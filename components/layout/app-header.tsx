@@ -1,6 +1,8 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { LogOut, RefreshCw, Search } from "lucide-react";
 
 import { signOutAction } from "@/features/auth/actions";
@@ -17,6 +19,17 @@ export const AppHeader = ({ userEmail }: AppHeaderProps) => {
   const searchParams = useSearchParams();
   const currentQuery = searchParams.get("q") ?? "";
 
+  const [spinning, setSpinning] = useState(false);
+
+  const handleRefresh = () => {
+    setSpinning(true);
+    try {
+      router.refresh();
+    } finally {
+      setTimeout(() => setSpinning(false), 700);
+    }
+  };
+
   return (
     <header className="mb-6 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-subtle md:flex-row md:items-center md:justify-between">
       <div>
@@ -29,8 +42,15 @@ export const AppHeader = ({ userEmail }: AppHeaderProps) => {
           <Search className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
           <Input className="pl-9 pr-9" defaultValue={currentQuery} name="q" placeholder="Buscar nesta tela..." />
         </form>
-        <Button onClick={() => router.refresh()} type="button" variant="secondary">
-          <RefreshCw className="mr-2 h-4 w-4" />
+        <Button onClick={handleRefresh} type="button" variant="secondary">
+          <motion.span
+            className="mr-2 inline-flex"
+            animate={spinning ? { rotate: 360 } : { rotate: 0 }}
+            transition={{ duration: 0.65 }}
+            aria-hidden="true"
+          >
+            <RefreshCw className="h-4 w-4" />
+          </motion.span>
           Recarregar
         </Button>
         <form action={signOutAction}>
