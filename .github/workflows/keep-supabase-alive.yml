@@ -2,8 +2,7 @@ name: Keep Supabase Alive
 
 on:
   schedule:
-    # Rodar a cada 1 dias é suficiente; ajuste se preferir mais frequência.
-    - cron: "0 0 */1 * *" # a cada 1 dias
+    - cron: "0 0 */1 * *" # a cada 1 dia
   workflow_dispatch:
 
 jobs:
