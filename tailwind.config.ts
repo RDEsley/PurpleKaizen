@@ -25,7 +25,7 @@ const config: Config = {
       },
       boxShadow: {
         subtle: "0px 8px 24px rgba(17, 24, 39, 0.06)"
-      }
+      },
       keyframes: {
         "spin-slow": {
           "0%": { transform: "rotate(0deg)" },
